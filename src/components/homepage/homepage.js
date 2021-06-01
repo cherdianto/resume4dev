@@ -1,16 +1,17 @@
 import React, { Component } from 'react'
+import { Container } from 'react-bootstrap'
 
 
 export default class homepage extends Component {
     render() {
         return (
-            <div>
+            <Container fluid>
                 <section id="tutorial" class="tutorial">
                     <div class="container">
                         <div class="col-lg-8 text-center mx-auto py-5">
                             <h2 class="py-3">Make a resume has never been this easy</h2>
                             <img src="https://dummyimage.com/800x400/000/fff&text=video+player" />
-                            <a href="/" class="btn btn-primary my-3">Build Your Resume</a>
+                            <a href="/" class="btn btn-primary my-4 py-2">Build Your Resume</a>
                         </div>
                     </div>
                 </section>
@@ -18,7 +19,7 @@ export default class homepage extends Component {
                 <section id="description" class="description bg-light py-5">
                     <div class="container">
                         <div class="row">
-                            <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+                            <div class="col-lg-8 order-2 order-lg-1 mt-3 mt-lg-0">
                                 <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
                                 <p class="font-italic">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
@@ -35,7 +36,7 @@ export default class homepage extends Component {
                                 culpa qui officia deserunt mollit anim id est laborum
                                 </p>
                             </div>
-                            <div class="col-lg-6 order-1 order-lg-2 text-center">
+                            <div class="col-lg-4 order-1 order-lg-2 text-center">
                                 <img src="https://dummyimage.com/400x370/000/fff&text=sample+resume" alt="" class="img-fluid" />
                             </div>
                         </div>
@@ -45,7 +46,7 @@ export default class homepage extends Component {
                 <section id="services" class="services py-5">
                     <div class="container">
                         <div class="section-title text-center">
-                            <h2>Feature</h2>
+                            <h2 className="my-3 py-4">Feature</h2>
                         </div>
 
                         <div class="row">
@@ -99,7 +100,7 @@ export default class homepage extends Component {
                 </section>
 
                 
-            </div>
+            </Container>
         )
     }
 }
