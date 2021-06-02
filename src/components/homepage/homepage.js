@@ -95,11 +95,8 @@ export default class homepage extends Component {
                             </div>
                         </div>
                         </div>
-
                     </div>
                 </section>
-
-                
             </Container>
         )
     }
