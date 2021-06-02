@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Container } from 'react-bootstrap'
+import VideoSection from './video'
 
 
 export default class homepage extends Component {
@@ -8,9 +9,9 @@ export default class homepage extends Component {
             <Container fluid>
                 <section id="tutorial" class="tutorial">
                     <div class="container">
-                        <div class="col-lg-8 text-center mx-auto py-5">
+                        <div class="col-lg-8 text-center mx-auto py-3">
                             <h2 class="py-3">Make a resume has never been this easy</h2>
-                            <img src="https://dummyimage.com/800x400/000/fff&text=video+player" />
+                            <VideoSection />
                             <a href="/" class="btn btn-primary my-4 py-2">Build Your Resume</a>
                         </div>
                     </div>
