@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Preview from './preview'
+import PdfViewer from './pdfViewer'
 import { connect } from 'react-redux'
 import { saveData } from '../../redux/actions/dataActions'
 
@@ -75,7 +76,7 @@ class builder extends Component {
                             </div>
                         </div>
                         <div className="col-md-6 bg-secondary py-3">
-                            <Preview />
+                            <PdfViewer />
                         </div>
                     </div>
                 </div>
