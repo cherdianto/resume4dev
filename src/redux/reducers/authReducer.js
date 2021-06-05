@@ -1,21 +1,25 @@
 const initState = {
-    authError: null
+    authError: null,
+    user: null
 }
 
 const authReducer = (state = initState, action) => {
+    console.log('masuk reducer')
     switch(action.type){
-        case 'LOGIN_ERROR':
+        case 'SIGNIN_ERROR':
             return {
                 ...state,
-                authError: 'Login failed'
+                authError: 'SIGNIN failed'
             }
-        case 'LOGIN_SUCCESS':
-            console.log('login success')
-            console.log(state)
-            return {
+        case 'SIGNIN_SUCCESS':
+            console.log('SIGNIN success')
+            const newData = {
                 ...state,
-                authError: null
+                authError: null,
+                user: action.payload
             }
+            console.log(newData);
+            return newData;
         case 'SIGNOUT_SUCCESS':
             console.log('signout success');
             return state;
@@ -23,10 +27,12 @@ const authReducer = (state = initState, action) => {
             console.log('signup success');
             return {
                 ...state,
-                authError: null
+                authError: null,
+                user: action.payload
             }
         case 'SIGNUP_ERROR':
             console.log('signup error');
+            console.log(action.err.message)
             return {
                 ...state,
                 authError: action.err.message

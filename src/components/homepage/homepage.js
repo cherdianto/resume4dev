@@ -1,10 +1,16 @@
 import React, { Component } from 'react'
 import { Container } from 'react-bootstrap'
 import VideoSection from './video'
+import { connect } from 'react-redux'
+import { Redirect } from 'react-router-dom'
 
 
-export default class homepage extends Component {
+class homepage extends Component {
     render() {
+        const { authError, user } = this.props;
+
+        // if(user) return <Redirect to="/login" />
+
         return (
             <Container fluid>
                 <section id="tutorial" class="tutorial">
@@ -102,3 +108,12 @@ export default class homepage extends Component {
         )
     }
 }
+
+const mapStateToProps = (state) => {
+    return {
+        authError: state.auth.authError,
+        user: state.auth.user
+    }
+}
+
+export default connect(mapStateToProps)(homepage)
