@@ -9,8 +9,6 @@ class homepage extends Component {
     render() {
         const { authError, user } = this.props;
 
-        // if(user) return <Redirect to="/login" />
-
         return (
             <Container fluid>
                 <section id="tutorial" class="tutorial">
@@ -110,6 +108,7 @@ class homepage extends Component {
 }
 
 const mapStateToProps = (state) => {
+    console.log(state.auth)
     return {
         authError: state.auth.authError,
         user: state.auth.user

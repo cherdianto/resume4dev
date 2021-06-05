@@ -1,22 +1,30 @@
 import React from 'react'
-import { Nav, Navbar, Container } from 'react-bootstrap'
+import { Container, Nav, Navbar, NavDropdown, Form, Button, FormControl } from 'react-bootstrap'
 import { Link } from 'react-router-dom';
+import SignedInLinks from './SignedInLinks';
+import SignedOutLinks from './SignedOutLinks';
+import { connect } from 'react-redux'
 
-function navbar() {
+function navbar(props) {
+    const { authError, user } = props;
+
+    const links = user ? <SignedInLinks/> : <SignedOutLinks />;
+
     return (
-        <>
-            <Container fluid>
-                <Navbar bg="light" variant="light">
-                    <Navbar.Brand><Link to="/">Resume4.dev</Link></Navbar.Brand>
-                    <Nav className="mr-auto">
-                        <Nav.Link><Link to="/builder">Builder</Link></Nav.Link>
-                        <Nav.Link><Link to="/signUp">Sign Up</Link></Nav.Link>
-                        <Nav.Link><Link to="/signIn">Sign In</Link></Nav.Link>
-                    </Nav>
-                </Navbar>
-            </Container>
-        </>
+        <Container fluid>
+            <Navbar bg="light" expand="lg">
+                <Navbar.Brand as={Link} to="/">Resume4.dev</Navbar.Brand>
+                { links }
+            </Navbar>
+        </Container>
     )
 }
 
-export default navbar
+const mapStateToProps = (state) => {
+    return {
+        authError: state.auth.authError,
+        user: state.auth.user
+    }
+}
+
+export default connect(mapStateToProps)(navbar);

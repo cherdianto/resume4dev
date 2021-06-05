@@ -33,7 +33,7 @@ export default class videoSection extends Component {
             ref={player => {
               this.player = player;
             }}
-            autoPlay
+            // autoPlay
           >
             <source src={this.state.source} />
             <ControlBar autoHide={false} />
